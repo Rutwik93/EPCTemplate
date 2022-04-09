@@ -4,17 +4,192 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS Assignment</title>
     <script src="https://kit.fontawesome.com/c66e3b13e9.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style.css">
+    
+    <title>Document</title>
+    <style>
+
+        *{
+            margin: 0%;
+            padding: 0%;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        
+        .header
+        {
+            display: grid;
+            grid-template-columns: 0.5fr 2fr 2fr 2fr 0.5fr;
+            grid-template-areas: ". header-logo . header-side header-side";
+        }
+
+        .header-logo
+        {
+            grid-area: header-logo;
+        }
+
+        .header-logo > img
+        {
+            height: 100%;
+            width: 100%;
+        }
+
+        .header-side
+        {
+            grid-area: header-side;
+            display: grid;
+            grid-template-rows: 0.8fr 1fr;
+            row-gap: 1vh;
+        }
+
+        .social-icon
+        {
+            color:#509ac9;
+            font-size: 18px;
+            margin-left: 1%;
+            margin-right: 1%;
+        }
+
+        .social-media-row
+        {
+            display: grid; 
+            grid-template-columns: auto; 
+        }
+
+        .social-media-header
+        {
+            display: flex;
+            justify-content: center; /* Horizontally Center Items */
+            justify-self: flex-end; /* Horizontally Center */
+            align-items: center; /* Vertically Center */
+            width: 25vw;     
+            background-color: #f5f5f5;
+            border-bottom-left-radius: 5em;
+        }
+
+        .search-bar
+        {
+            display: flex; 
+            justify-content: center; 
+            align-items: center;
+        }
+
+        .search-bar > button
+        {
+            position: relative;
+            right: 2em;
+            font-size: 1.5em;
+            color:#d8d8d8;
+            background-color: white;
+            border: none;
+            height: fit-content;
+        }
+
+        .header-search
+        {
+            width: 15vw;
+            height: 6vh;
+            font-size: 25px;
+            padding-left: 2%;
+            padding-right: 8%;
+            border: 1px solid #d8d8d8;
+        }
+
+        
+        @media only screen and (max-width: 992px) {
+            .header
+            {
+                grid-template-areas: "header-logo header-logo header-side header-side header-side";
+            }
+
+            .header-logo
+            {
+                grid-area: header-logo;
+            }
+
+            .header-logo > img
+            {
+                height: 100%;
+                width: 45vw;
+            }
+
+            .header-side
+            {
+                grid-area: header-side;
+                display: grid;
+                grid-template-rows: 1fr 1fr;
+                row-gap: 1vh;
+            }
+
+            .social-media-header
+            {
+                width: 40vw;    
+                padding: 2vh;
+            }
+
+            .header-search
+            {
+                width: 30vw;
+                font-size: 20px;
+                height: 6vh;
+            }
+        }
+
+        @media only screen and (max-width: 600px) {
+            .header
+            {
+                grid-template-rows: 1fr 1fr;
+                grid-template-areas: "header-logo" "header-side";
+            }
+
+            .header-logo
+            {
+                grid-area: header-logo;
+            }
+
+            .header-logo > img
+            {
+                height: 100%;
+                width: 100%;
+            }
+
+            .header-side
+            {
+                grid-area: header-side;
+                display: grid;
+                grid-template-rows: auto auto;
+            }
+
+            .social-media-header
+            {
+                width: 100vw; 
+                border-bottom-left-radius: 0vw;
+            }
+
+            .header-search
+            {
+                width: 100vw;
+                font-size: 20px;
+                height: 6vh;
+            }
+
+            .search-bar > button
+            {
+                position: absolute;
+                right: 1vw;
+            }
+        }
+
+
+    </style>
 </head>
 <body>
+    
     <div class="header">
         <div class="header-logo">
-            <img class="logo-img" src="http://epc.ac.uk/wp-content/uploads/2017/05/cropped-EPC-logo-Banner-head-image.jpg" alt="Not Found">
+            <img style="" src="http://epc.ac.uk/wp-content/uploads/2017/05/cropped-EPC-logo-Banner-head-image.jpg" alt="Not Found">
         </div>
-
-        <div style="display: grid;">
+        
+        <div class="header-side">
             <div class="social-media-row">
                 <div class="social-media-header">
                     <span style="font-weight: 550; font-size: 18px; margin-right: 1%;">Follow us on</span> 
@@ -31,332 +206,11 @@
                 </div>
             </div>
         </div>
-
-        <div style="grid-column-start: 1; grid-column-end: 4; background-color: #2b518b;">
-            <div class="menu">
-                <div style="grid-column-start: 2;">
-                    <ul class="navigation">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Events</a></li>
-                        <li><a href="#">Publications</a></li>
-                        <li><a href="#">Member's Portal</a></li>
-                        <li><a href="#">Board</a></li>
-                        <li><a href="#">Communities</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div style="grid-column-start: 1; grid-column-end: 4; align-items: center;  background: url('https://i.ibb.co/wZtqNmt/maxime-Rsze-PYsk-X8c-unsplash.jpg'); background-repeat: no-repeat; background-size: cover;">
-            <div class="image-box-column">
-                <div style="grid-column-start: 2; opacity: 0.9; background-color: aliceblue;">
-                    <div class="image-box-row">
-                        <div class="image-box-title">EPC Recruitement and Admissions Forum 2022 Series</div>
-                        <div>
-                            <p class="image-box-description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero, maiores molestiae ipsum aspernatur corrupti autem aut praesentium fugit, nesciunt alias dignissimos! Vel repellat pariatur itaque praesentium ratione explicabo corrupti cum, consequuntur error iusto eveniet asperiores minima, obcaecati autem unde, sit modi amet? Voluptatibus iure, vero nostrum neque at id voluptas nemo fuga dolores explicabo consectetur, sunt, omnis rerum! Tenetur cum eaque sapiente provident placeat molestiae possimus, voluptates fuga asperiores eum repellat! Eligendi voluptatum ut exercitationem est quam voluptates perspiciatis, adipisci dignissimos odit nostrum ex impedit, cum accusamus porro? Accusantium deserunt sequi fuga incidunt iusto maiores dignissimos quasi ducimus aspernatur quos?</p>
-                        </div>
-                        <div><button class="image-box-btn">View More</button></div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
+        
     </div>
 
 
-    <div class="box">
-        <div class="box-image">
-            <img src="https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=934&q=80" alt="">
-            <div>
-                <p style="margin: 0%; font-size:25px; text-align: center;">Professor Colin Turner</p>
-                <p style="margin: 0%; color:#2b518b; font-size:20px; text-align: center;">President</p>
-            </div>
-        </div>
-        <div class="box-details">
-            <div class="image-box-title">About Engineering Professors' Council (EPC)</div>
-            <div class="image-box-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis reiciendis, nihil atque voluptates sapiente vero culpa! Harum reiciendis eveniet quas, laborum quae possimus atque quasi explicabo, dignissimos incidunt ratione culpa eos quo ut temporibus saepe. Commodi ad consectetur voluptatum, nisi maxime dolores, quas officiis maiores sequi laborum, ratione optio iste.</div>
-            <div class="box-details-btn">
-                <button class="image-box-btn" syle="margin-top:10em;">View More</button>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="event-box">
-        <div class="event-column-1">
-            <div class="event-image-container">
-                <div>
-                    <img class="event-image" src="https://images.unsplash.com/photo-1563820510191-3b4a20c78568?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80" alt="Not Found">
-                </div>
-                <div style="height: 100%; display: grid; grid-template-rows: 0.7fr 2fr 3fr 1.5fr; padding: 20px;">
-                    <div style="display: flex; column-gap: 0.5em; font-size: 18px;">
-                        <span>Date: <span style="color:#2b518b;">Nov 25, 2020</span></span>
-                        <span>By: <span style="color:#2b518b;">Stella Fowler</span></span> 
-                    </div>
-                    <div style="font-size:24px;">Recruitement & Admission Forum (2020 Series): International students: Where now?</div>
-                    <div style="text-align:justify; font-size:20px">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo, quis ab! Omnis rerum odit doloribus inventore sequi a, aliquam enim, in culpa, aspernatur at. Tempora commodi tenetur non deleniti vitae.</div>
-                    <div style="display: flex; column-gap: 10px; color:#2b518b; font-size:22px; "><span>Continue Reading</span> <i class="fa-solid fa-arrow-right-long" style="line-height: 30px;"></i></div>
-                </div>
-            </div>
-        </div>
-
-        <div class="event-column-2">
-            <div class="event-column-2-list-item">
-                <div>
-                    <img style="width: 100%; height: 100%;" src="https://epc.ac.uk/wp-content/uploads/2020/09/RA-forum-logo-300x146.png" alt="Not Found">
-                </div>
-                <div style="height: fit-content; display: grid; grid-template-rows: auto 2fr 3fr">
-                    <div style="display: flex; column-gap: 0.5em; font-size: 16px;">
-                        <span style="font-weight: 100;">Date:</span><span style="font-weight: 700;">Nov 25, 2020</span>
-                        <span style="font-weight: 100;">Time:</span><span style="font-weight: 700;">14:00 - 16:00</span>
-                        <span style="font-weight: 100;">By:</span><span style="font-weight: 700;">Stella Fowler</span>
-                    </div>
-                    <div style="font-size:24px; margin-top: 1%; color:#2b518b;">EPC Recruitement & Admissions Forum</div>
-                    <div style="text-align:justify; font-size:22px; margin-top: 1%;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo, quis ab! Omnis rerum odit doloribus inventore sequi a, aliquam enim, in culpa, aspernatur at. Tempora commodi tenetur non deleniti vitae.</div>
-                </div>
-                <div class="event-column-2-list-item-hr"><hr style="color:#edf8ff; width: 100%;"></div>
-            </div>
-
-            <div class="event-column-2-list-item">
-                <div>
-                    <img style="width: 100%; height: 100%;" src="https://epc.ac.uk/wp-content/uploads/2020/09/RA-forum-logo-300x146.png" alt="Not Found">
-                </div>
-                <div style="height: fit-content; display: grid; grid-template-rows: auto 2fr 3fr">
-                    <div style="display: flex; column-gap: 0.5em; font-size: 16px;">
-                        <span style="font-weight: 100;">Date:</span><span style="font-weight: 700;">Nov 25, 2020</span>
-                        <span style="font-weight: 100;">Time:</span><span style="font-weight: 700;">14:00 - 16:00</span>
-                        <span style="font-weight: 100;">By:</span><span style="font-weight: 700;">Stella Fowler</span>
-                    </div>
-                    <div style="font-size:24px; margin-top: 1%; color:#2b518b;">Recruitement & Admission Forum (2020 Series): International students: Where now?</div>
-                    <div style="text-align:justify; font-size:22px; margin-top: 1%;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo, quis ab! Omnis rerum odit doloribus inventore sequi a, aliquam enim, in culpa, aspernatur at. Tempora commodi tenetur non deleniti vitae.</div>
-                </div>
-                <div class="event-column-2-list-item-hr"><hr style="color:#edf8ff; width: 100%;"></div>
-            </div>
-
-            <div class="event-column-2-list-item">
-                <div>
-                    <img style="width: 100%; height: 100%;" src="https://epc.ac.uk/wp-content/uploads/2020/09/RA-forum-logo-300x146.png" alt="Not Found">
-                </div>
-                <div style="height: fit-content; display: grid; grid-template-rows: auto 2fr 3fr">
-                    <div style="display: flex; column-gap: 0.5em; font-size: 16px;">
-                        <span style="font-weight: 100;">Date:</span><span style="font-weight: 700;">Nov 25, 2020</span>
-                        <span style="font-weight: 100;">Time:</span><span style="font-weight: 700;">14:00 - 16:00</span>
-                        <span style="font-weight: 100;">By:</span><span style="font-weight: 700;">Stella Fowler</span>
-                    </div>
-                    <div style="font-size:24px; margin-top: 1%; color:#2b518b;">Recruitement & Admission Forum (2020 Series): International students: Where now?</div>
-                    <div style="text-align:justify; font-size:22px; margin-top: 1%;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo, quis ab! Omnis rerum odit doloribus inventore sequi a, aliquam enim, in culpa, aspernatur at. Tempora commodi tenetur non deleniti vitae.</div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-
-    <div class="content-container">
-        <div class="content-container-left">
-            
-            <div style="display: flex; align-items: center; font-size: 35px; font-weight: 700; color: #333333;">
-                <p>Board</p>
-            </div>
-
-            <div>
-                <p class="limit-para">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit alias ab incidunt repellat dolore? Dignissimos ullam animi praesentium delectus consectetur veniam unde repellendus molestias quae illum, alias rerum natus? Dolores sint hic accusantium aperiam architecto voluptatum, numquam eveniet aspernatur eaque, mollitia aliquid obcaecati fuga laboriosam? Neque aspernatur vel maxime maiores consequatur, repudiandae ea voluptatum voluptates ex a earum, omnis quae repellendus nihil officia nesciunt accusamus minima rerum esse similique fugit cum est doloremque. Eligendi nemo temporibus voluptas fuga quia minima, a laboriosam veritatis eum dolor odit impedit quos eos dolores. Odio culpa nesciunt ad, mollitia enim labore quam obcaecati dicta quis dolorum velit unde esse repellat fugiat, incidunt sapiente. Iusto fugiat nesciunt mollitia aliquam maiores maxime, vitae sequi vero explicabo minima animi facere excepturi magnam asperiores laudantium ad distinctio porro? Quidem dolorem porro ab. Ea molestiae aspernatur sit consequuntur laboriosam nihil? Rerum, minus similique in sequi repudiandae cum laborum consectetur reprehenderit nostrum aliquam excepturi a nobis alias aspernatur, optio magnam atque maxime. Fugiat quibusdam ipsam libero aperiam saepe deserunt delectus animi error adipisci ea in culpa molestias vero nulla nemo temporibus, obcaecati, doloribus voluptas! Officia ducimus error, tempora cum molestiae neque vero ratione expedita, cupiditate temporibus tempore doloribus distinctio, minima accusamus. Quisquam, commodi odit quo earum omnis, nulla exercitationem ab quas magni asperiores recusandae! Iure sint ipsa sapiente voluptatem nemo error quas? Facere maiores itaque ullam ab voluptate tempora atque rem fuga. Vitae recusandae odit nemo enim sunt, aliquid deserunt assumenda numquam et modi minus tenetur, quaerat alias repudiandae autem non blanditiis. Suscipit rerum autem laborum aperiam fugiat laudantium, corporis obcaecati vitae labore. In, ipsam qui dolore fuga non dolor animi temporibus, veniam voluptatibus impedit rem quod magnam. Veritatis commodi culpa amet beatae animi non facilis saepe. Fugiat sunt porro delectus ipsum ullam cupiditate, totam accusamus suscipit magni. Distinctio iusto quod reiciendis, quibusdam nihil aliquam possimus quasi quos corporis magni aut quam unde fugit earum nisi molestiae quidem voluptates atque incidunt! Perferendis atque placeat ut exercitationem. Corrupti vel, a nihil amet molestias qui officiis nobis nesciunt odit temporibus, quis nisi totam! Quisquam sint vel necessitatibus perferendis mollitia, nostrum minima placeat! Maiores, atque earum itaque corrupti esse odio dolore consectetur commodi ex sapiente labore animi nihil ut rerum rem neque ipsa excepturi quas unde laboriosam! Alias error voluptas modi unde vel. Eos laboriosam, doloremque laborum nesciunt repellendus tempore temporibus quasi distinctio quo eligendi quam, reprehenderit vel eius illo nisi cumque! Aliquid, minus dignissimos eligendi laboriosam, iusto eius numquam similique culpa neque quidem qui saepe. Sapiente error rerum, ullam neque quibusdam, natus perferendis beatae officiis sit dolores odio saepe? Similique, ab autem eaque nesciunt earum dolor nam maiores quia eveniet! Quae repellat animi, asperiores velit nam sint possimus rem nulla libero aut, laborum mollitia distinctio incidunt earum dolore quisquam optio alias error. In ex delectus culpa asperiores illum atque beatae similique sint quisquam. Optio est quis earum et veritatis minima quod ipsa numquam. Ut magni iusto sequi sapiente! Est quo asperiores libero temporibus exercitationem praesentium repudiandae soluta minus aperiam. Impedit, doloremque ipsa?
-                </p>
-            </div>
-
-            <div class="content-publications">
-                <p>Board 2020/21</p>
-            </div>
-
-            <div class="content-publications">
-                <p>Board 2018/19</p>
-            </div>
-
-            <div class="content-publications">
-                <p>Board 2017/18</p>
-            </div>
-
-            <div>
-                <div class="box-details-btn">
-                    <button class="image-box-btn" syle="margin-top:10em;">View More</button>
-                </div>
-            </div>
-            
-
-
-        </div>
-
-        <div class="content-container-right">
-            <div style="display: flex; align-items: center; font-size: 35px; font-weight: 700; color: #333333;">
-                <p>Publications</p>
-            </div>
-
-            <div>
-                <p class="limit-para">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Similique ad dolores eum rem magnam ea iusto porro nostrum assumenda sapiente aliquid a aperiam dolorem laboriosam error quia iure rerum, enim temporibus blanditiis necessitatibus molestias ex labore! Illum, iure? Deleniti vel, adipisci quasi cum ullam unde voluptatem veritatis suscipit in placeat itaque iste molestiae, commodi, dignissimos quae! Odio ea ipsum reiciendis saepe possimus, esse delectus explicabo, aliquid vero officia a soluta? Porro tenetur suscipit quisquam nulla non esse enim dolores, fugiat ipsum. Rem ullam, labore, dolorem ipsam consectetur eligendi vitae voluptatibus laboriosam molestias blanditiis quia, voluptate odit totam. Quis, eaque. Cum.
-                </p>
-            </div>
-
-            <div>
-                <p style="font-size:18px; font-weight:600;">Recent Publications</p>
-            </div>
-
-            <div class="content-publications">
-                <p>The Impact of Brexit on HE research funding</p>
-            </div>
-
-            <div class="content-publications">
-                <p>Career Framework Teaching  April 2018</p>
-            </div>
-
-            <div class="content-publications">
-                <p>Experience Enhanced</p>
-            </div>
-
-            <div>
-                <div class="box-details-btn">
-                    <button class="image-box-btn" syle="margin-top:10em;">View All Publications</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-
-    <div class="blog-container">
-        <div class="blog-header">
-            <p>Latest Blogs</p>
-        </div>
-
-        <div class="blog-post blog-post1">
-            <div>
-                <img style="width:100%;" src="https://images.unsplash.com/photo-1532635241-17e820acc59f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1115&q=80" alt="Not Found">
-            </div>
-            <div style="font-size: 16px;">
-                <span><span style="color:#888888; font-weight: 600;">Date: </span><span style="font-weight: 600; color:#2b518b;">Nov 13, 2020</span></span>
-                <span><span style="color:#888888; font-weight: 600;">By: </span><span style="font-weight: 600; color:#2b518b;">Stella Fowler</span></span>
-            </div>
-            <div>
-                <span style="font-size: 22px; font-weight: 600;">EPC Recruitement and Admissions Forum 2020 Series Speakers</span>
-            </div>
-            <div style="color:#888888;">
-                <p class="limit-para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis sapiente sed ipsam! Nostrum nulla maxime tenetur, voluptatibus culpa, sequi dolorem ipsum amet quas cupiditate neque error hic soluta velit animi accusantium consequuntur natus tempore iure placeat earum odio quis. Rerum aperiam, distinctio, cum voluptatibus unde quae, tempora quia veritatis incidunt sunt aliquid aliquam odit porro expedita. Commodi, eius labore aperiam quae exercitationem repellat, cupiditate provident accusantium impedit id quisquam, esse repellendus sequi natus eveniet eos hic quibusdam suscipit quia ad iste quos cumque veniam quasi? Amet nesciunt accusantium dignissimos expedita harum corporis numquam hic, officiis ad sed similique reprehenderit! Eveniet sed voluptatem repellendus, commodi fugiat veritatis alias enim impedit laudantium a eos tempora id doloribus cupiditate aut necessitatibus animi? Perferendis autem itaque, vitae cupiditate, soluta sapiente debitis maxime libero molestias officiis accusantium aliquid assumenda maiores deleniti saepe repellat dicta fuga perspiciatis architecto! Sint asperiores explicabo fuga temporibus provident. Corrupti beatae, iure unde reprehenderit architecto distinctio sit, impedit est quasi, aperiam quos rem error maxime quis vitae. Accusamus, excepturi officia? Doloremque optio eaque itaque. Velit doloremque est saepe et voluptatum necessitatibus inventore itaque obcaecati labore vel consequuntur consequatur similique excepturi vitae ipsum voluptatem perspiciatis deserunt, eius esse perferendis facere rem dolor!</p>
-            </div>
-            <div>
-                <div style="display: flex; column-gap: 10px; color:#2b518b; font-size:22px; margin-bottom: 1em;"><span>Continue Reading</span> <i class="fa-solid fa-arrow-right-long" style="line-height: 1.7em;"></i></div>
-            </div>
-        </div>
-
-        <div class="blog-post blog-post2">
-            <div>
-                <img style="width:100%; max-height: 20rem;" src="https://images.unsplash.com/photo-1643101448856-6bd67dbcdb33?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80" alt="Not Found">
-            </div>
-            <div style="font-size: 16px;">
-                <span><span style="color:#888888; font-weight: 600;">Date: </span><span style="font-weight: 600; color:#2b518b;">Nov 13, 2020</span></span>
-                <span><span style="color:#888888; font-weight: 600;">By: </span><span style="font-weight: 600; color:#2b518b;">Stella Fowler</span></span>
-            </div>
-            <div>
-                <span style="font-size: 22px; font-weight: 600;">EPC Recruitement and Admissions Forum 2020 Series Posters</span>
-            </div>
-            <div style="color:#888888;">
-                <p class="limit-para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis sapiente sed ipsam! Nostrum nulla maxime tenetur, voluptatibus culpa, sequi dolorem ipsum amet quas cupiditate neque error hic soluta velit animi accusantium consequuntur natus tempore iure placeat earum odio quis. Rerum aperiam, distinctio, cum voluptatibus unde quae, tempora quia veritatis incidunt sunt aliquid aliquam odit porro expedita. Commodi, eius labore aperiam quae exercitationem repellat, cupiditate provident accusantium impedit id quisquam, esse repellendus sequi natus eveniet eos hic quibusdam suscipit quia ad iste quos cumque veniam quasi? Amet nesciunt accusantium dignissimos expedita harum corporis numquam hic, officiis ad sed similique reprehenderit! Eveniet sed voluptatem repellendus, commodi fugiat veritatis alias enim impedit laudantium a eos tempora id doloribus cupiditate aut necessitatibus animi? Perferendis autem itaque, vitae cupiditate, soluta sapiente debitis maxime libero molestias officiis accusantium aliquid assumenda maiores deleniti saepe repellat dicta fuga perspiciatis architecto! Sint asperiores explicabo fuga temporibus provident. Corrupti beatae, iure unde reprehenderit architecto distinctio sit, impedit est quasi, aperiam quos rem error maxime quis vitae. Accusamus, excepturi officia? Doloremque optio eaque itaque. Velit doloremque est saepe et voluptatum necessitatibus inventore itaque obcaecati labore vel consequuntur consequatur similique excepturi vitae ipsum voluptatem perspiciatis deserunt, eius esse perferendis facere rem dolor!</p>
-            </div>
-            <div>
-                <div style="display: flex; column-gap: 10px; color:#2b518b; font-size:22px; margin-bottom: 1em;"><span>Continue Reading</span> <i class="fa-solid fa-arrow-right-long" style="line-height: 1.7em;"></i></div>
-            </div>
-        </div>
-
-        <div class="blog-post blog-post3">
-            <div>
-                <img style="width: 100%; min-height: 20rem; max-height: 20rem;" src="https://images.unsplash.com/photo-1579165466991-467135ad3110?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="Not Found">
-            </div>
-            <div style="font-size: 16px;">
-                <span><span style="color:#888888; font-weight: 600;">Date: </span><span style="font-weight: 600; color:#2b518b;">Nov 13, 2020</span></span>
-                <span><span style="color:#888888; font-weight: 600;">By: </span><span style="font-weight: 600; color:#2b518b;">Stella Fowler</span></span>
-            </div>
-            <div>
-                <span style="font-size: 22px; font-weight: 600;">Guest Blog: To trust or not to trust?</span>
-            </div>
-            <div style="color:#888888;">
-                <p class="limit-para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis sapiente sed ipsam! Nostrum nulla maxime tenetur, voluptatibus culpa, sequi dolorem ipsum amet quas cupiditate neque error hic soluta velit animi accusantium consequuntur natus tempore iure placeat earum odio quis. Rerum aperiam, distinctio, cum voluptatibus unde quae, tempora quia veritatis incidunt sunt aliquid aliquam odit porro expedita. Commodi, eius labore aperiam quae exercitationem repellat, cupiditate provident accusantium impedit id quisquam, esse repellendus sequi natus eveniet eos hic quibusdam suscipit quia ad iste quos cumque veniam quasi? Amet nesciunt accusantium dignissimos expedita harum corporis numquam hic, officiis ad sed similique reprehenderit! Eveniet sed voluptatem repellendus, commodi fugiat veritatis alias enim impedit laudantium a eos tempora id doloribus cupiditate aut necessitatibus animi? Perferendis autem itaque, vitae cupiditate, soluta sapiente debitis maxime libero molestias officiis accusantium aliquid assumenda maiores deleniti saepe repellat dicta fuga perspiciatis architecto! Sint asperiores explicabo fuga temporibus provident. Corrupti beatae, iure unde reprehenderit architecto distinctio sit, impedit est quasi, aperiam quos rem error maxime quis vitae. Accusamus, excepturi officia? Doloremque optio eaque itaque. Velit doloremque est saepe et voluptatum necessitatibus inventore itaque obcaecati labore vel consequuntur consequatur similique excepturi vitae ipsum voluptatem perspiciatis deserunt, eius esse perferendis facere rem dolor!</p>
-            </div>
-            <div>
-                <div style="display: flex; column-gap: 10px; color:#2b518b; font-size:22px; margin-bottom: 1em;"><span>Continue Reading</span> <i class="fa-solid fa-arrow-right-long" style="line-height: 1.7em;"></i></div>
-            </div>
-        </div>
-
-        <div class="blog-footer">
-            <button class="image-box-btn">View All Blogs</button>
-        </div>
-    </div>
-
-
-
-    <div class="footer">
-        <div class="footer-head">
-            <div class="footer-head-links">
-                <ul>
-                    <li>Events</li>
-                    <li>Publications</li>
-                    <li>Member's Portal</li>
-                    <li>Board</li>
-                    <li>Communities</li>
-                </ul>
-            </div>
-            <div class="footer-head-social">
-                <span style="margin-right: 1em;">Follow us on </span>
-                <a href="https://twitter.com/" ><i class="fa-brands fa-twitter"></i></a>
-                <a href="https://www.linkedin.com/in/rutwik-patel-9a028a22b/" ><i class="fa-brands fa-linkedin-in"></i></a>
-                <a href="https://mail.google.com/"><i class="fa-solid fa-envelope"></i></a>
-            </div>
-        </div>
-
-        <div class="footer-body">
-            <div class="footer-body-c1">
-                <div><span style="font-size: 25px;">New on the Site</span></div>
-                <div> 
-                    <ul style="list-style-type: none; font-size: 18px;">
-                        <li><i class="fa-solid fa-arrow-right-long"></i> EPC Bulletin: September 2020</li>
-                        <li><i class="fa-solid fa-arrow-right-long"></i> Guest Blog: To trust or not to trust?</i></li>
-                        <li><i class="fa-solid fa-arrow-right-long"></i> Guest Blog: Engineering Council on Revised Standards</i></li>
-                        <li><i class="fa-solid fa-arrow-right-long"></i> Emerging Stronger: Lasting Impact from Crisis Innovation - a new publication</i></li>
-                        <li><i class="fa-solid fa-arrow-right-long"></i> EPC Bulletin: July 2020</i></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-body-c2">
-                <div><span style="font-size: 25px;">Quick Links</span></div>
-                <div> 
-                    <ul style="list-style-type: none; font-size: 22px;">
-                        <li><i class="fa-solid fa-arrow-right-long"></i> Home</li>
-                        <li><i class="fa-solid fa-arrow-right-long"></i> About Us</i></li>
-                        <li><i class="fa-solid fa-arrow-right-long"></i> Sitemap</i></li>
-                        <li><i class="fa-solid fa-arrow-right-long"></i> Privacy Policy</i></li>
-                        <li><i class="fa-solid fa-arrow-right-long"></i> Contact Us</i></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-body-c3">
-                <div><span style="font-size: 25px;">Member Portal</span></div>
-                <div> 
-                    <p style="font-size: 18px; text-align:justify;">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit reiciendis maxime eligendi perferendis explicabo dignissimos hic asperiores. Fuga repellendus a voluptas soluta dolorum, quisquam nihil facilis. Aut praesentium iste quae ducimus blanditiis, voluptates exercitationem animi eos ipsam ratione. Ut enim doloribus fugit quaerat! Commodi, inventore similique! Cum temporibus culpa iure?
-                    </p>
-                </div>
-                <div>
-                    <button style="padding: 0.5em 1em 0.5em 1em; margin-top: 1em; font-weight: 600; font-size: 22px; color: #2b518b; background-color: white; border: none;">View More</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="footer-foot">
-            <span>Copyright © 2020. All Rights Reserved to EPC</span>
-        </div>        
-    </div>
-
-    
-    
 
 </body>
 </html>
