@@ -231,15 +231,8 @@ body
 {
     grid-area: box-details;
     display: grid; 
-    grid-template-rows: 1.5fr 3fr 1fr; 
-    padding: 2%;
+    grid-template-rows: auto auto auto;
     height: fit-content;
-}
-
-.box-details-title
-{
-    font-size: 25px;
-    font-weight: 500;
 }
 
 .box-image > img
@@ -248,6 +241,31 @@ body
     width:100%; 
     padding: 5%;
     box-sizing: border-box;
+}
+
+.box-details-title
+{
+    font-size: 3vh;
+    font-weight: 700;
+    text-overflow:ellipsis; 
+    overflow: hidden;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    white-space: normal;
+}
+
+.box-details-description
+{
+    overflow: hidden;
+    font-size: 22px;
+    text-overflow:ellipsis;
+    text-align: justify;
+    overflow: hidden;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    white-space: normal;
 }
 
 .box-details > .image-box-btn
